@@ -1,0 +1,26 @@
+server:
+  port: 8002
+
+msa:
+  cart-service:
+    url: localhost:8000
+  product-service:
+    url: localhost:8001
+
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testuserdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    hikari:
+      connection-timeout: 3000
+      maximum-pool-size: 5
+      max-lifetime: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
