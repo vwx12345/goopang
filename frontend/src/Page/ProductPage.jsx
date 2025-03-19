@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../config";
+
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -10,7 +12,7 @@ export default function ProductPage() {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch("http://localhost:8001/api/products");
+      const res = await fetch(`${API_BASE_URL}/api/products`);
       const data = await res.json();
       setProducts(data);
     } catch (error) {

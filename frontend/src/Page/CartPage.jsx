@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../config";
+
 
 export default function CartPage() {
   const [userId, setUserId] = useState("");
@@ -12,7 +14,7 @@ export default function CartPage() {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:8000/api/carts/register?productId=${productId}&userId=${userId}&quantity=${quantity}`,
+        `${API_BASE_URL}/api/carts/register?productId=${productId}&userId=${userId}&quantity=${quantity}`,
         { method: "POST" }
       );
       const data = await res.json();
