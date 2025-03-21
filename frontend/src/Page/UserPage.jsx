@@ -10,8 +10,7 @@ export default function UserPage() {
   const fetchUser = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`/api/users/${userId}`);
-      // const res = await fetch(`${API_BASE_URL}/api/users/${userId}`);
+      const res = await fetch(`${API_BASE_URL}/api/users/${userId}`);
       
       const data = await res.json();
       setResponse(data);
